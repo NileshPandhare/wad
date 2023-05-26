@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Data List</title>
+</head>
+<body>
+  <h1>Data List</h1>
+  <ul id="dataList"></ul>
+
+  <script>
+    // Retrieve data from local storage
+    var storedData = JSON.parse(localStorage.getItem('userData'));
+
+    // Display the data in the list
+    var dataList = document.getElementById('dataList');
+    if (storedData) {
+      var listItem = document.createElement('li');
+      listItem.textContent = 'Email: ' + storedData.email;
+      dataList.appendChild(listItem);
+
+      listItem = document.createElement('li');
+      listItem.textContent = 'Username: ' + storedData.username;
+      dataList.appendChild(listItem);
+
+      listItem = document.createElement('li');
+      listItem.textContent = 'Password: ' + storedData.password;
+      dataList.appendChild(listItem);
+    }
+  </script>
+</body>
+</html>
